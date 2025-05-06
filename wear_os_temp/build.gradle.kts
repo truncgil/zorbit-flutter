@@ -86,4 +86,4 @@ dependencies {
     
     // Flutter deferred components için SplitCompat API'si
     implementation("androidx.core:core:1.10.0")
-}
+} 

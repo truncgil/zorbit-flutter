@@ -1,11 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
     
-    <!-- Ortak özellikler -->
+    <!-- Android TV özellik deklarasyonları -->
+    <uses-feature android:name="android.software.leanback" android:required="false" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
     
-    <!-- TV özellikleri -->
-    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <!-- Android Watch özellik deklarasyonu -->
+    <uses-feature android:name="android.hardware.type.watch" android:required="${wearAppRequired}" />
+    
+    <!-- Phone ve TV flavor'lar için tüm manifestten kaldıralım, sadece wear flavor için eklenecek -->
     
     <application
         android:label="zorbit"
@@ -30,8 +33,6 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
-              
-            <!-- Mobil telefonlar için intent filter -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -49,7 +50,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
-    
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.

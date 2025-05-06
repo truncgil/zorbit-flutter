@@ -23,7 +23,7 @@
 
 # WebView kuralları
 -keep class com.truncgil.zorbit.** { *; }
--keep class com.truncgil.zorbit2.** { *; }
+-keep class com.truncgil.zorbit2.wear.** { *; }
 -keepattributes JavascriptInterface
 -keepattributes *Annotation*
 
